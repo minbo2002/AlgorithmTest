@@ -12,4 +12,5 @@ package stringAlgorithm;
  * */
 
 public class RemoveDuplicateCharacters_6 {
+
 }
