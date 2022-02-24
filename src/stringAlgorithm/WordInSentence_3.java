@@ -35,6 +35,7 @@ public class WordInSentence_3 {
             // .indexOf(' ')) != -1  : 띄어쓰기를 발견 못하면 -1을 반환하므로 while문 종료
             // ex) it is time to study 에서 띄어쓰기는 index값이 2,5,10,13일때이다
 
+
             String tmp = str.substring(0, pos);
             // .substring(indexStart, indexEnd) : 시작index에서 종료index까지 문자열의 부분문자열을 반환
             //  단 indexEnd는 포함하지않음.  ex) String str = 'apple'  str.substring(1,3)  --> "pp"
@@ -53,7 +54,7 @@ public class WordInSentence_3 {
     public static void main(String[] args) {
         WordInSentence_3 ws = new WordInSentence_3();
         Scanner sc = new Scanner(System.in);
-        String str = sc.nextLine();    //  .nextLine()  -->  문자 or 엔터치기 전까지 문자열 전체를 입력받아 String 타입으로 return
+        String str = sc.nextLine();    //  .nextLine()  :  문자 or 엔터치기 전까지 문자열 전체를 입력받아 String 타입으로 return
         System.out.println(ws.resolution(str));
     }
 }

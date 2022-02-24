@@ -32,8 +32,8 @@ public class FindLetters_1 {
         FindLetters_1 fl = new FindLetters_1();
 
         Scanner sc = new Scanner(System.in);
-        String str = sc.next(); //  .next()  -->  문자 or 문자열에서 공백전까지 입력받아 String 타입으로 return
-        char c = sc.next().charAt(0);    //  .next().charAt(0)  --> 문자열에서 문자1개만 index 0번째 접근
+        String str = sc.next(); //  .next() : 문자 or 문자열에서 공백전까지 입력받아 String 타입으로 return
+        char c = sc.next().charAt(0);    //  .next().charAt(0) : 문자열에서 문자1개만 index 0번째 접근
 
         System.out.println(fl.solution(str, c));
     }

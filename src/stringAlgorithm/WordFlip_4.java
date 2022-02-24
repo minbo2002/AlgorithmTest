@@ -48,7 +48,7 @@ public class WordFlip_4 {
         WordFlip_4 wf = new WordFlip_4();
 
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();   //  .nextInt() --> 정수를 입력받고 엔터처리는 하지않는다.
+        int n = sc.nextInt();   //  .nextInt()  :  정수를 입력받고 엔터처리는 하지않는다.
         String[] str = new String[n];  // String 배열을 n개 만듬
 
         for(int i=0; i<n; i++) {

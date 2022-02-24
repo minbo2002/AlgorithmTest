@@ -30,7 +30,7 @@ public class CaseConversion_2 {
     public static void main(String[] args) {
         CaseConversion_2 cc = new CaseConversion_2();
         Scanner sc = new Scanner(System.in);
-        String str = sc.next();     //  .next()  -->  문자 or 문자열에서 공백전까지 입력받아 String 타입으로 return
+        String str = sc.next();     //  .next()  :  문자 or 문자열에서 공백전까지 입력받아 String 타입으로 return
 
         System.out.println(cc.solution(str));
     }
