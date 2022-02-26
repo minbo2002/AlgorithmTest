@@ -14,7 +14,7 @@ import java.util.Scanner;
 
 public class WordInSentence_3 {
 
-/*    public String resolution(String str) {
+    public String resolution(String str) {
         String answer = "";
         int m = Integer.MIN_VALUE;  // Integer.MIN_VALUE : 정수의 최소값
         String[] s = str.split(" ");    //  .split : 띄어쓰기 분리하고 String 배열에 저장
@@ -26,15 +26,15 @@ public class WordInSentence_3 {
             }
         }
         return answer;
-    }*/
+    }
 
-    public String resolution(String str) {
+    public String resolution2(String str) {
         String answer = "";
         int m = Integer.MIN_VALUE, pos;  // Integer.MIN_VALUE : 정수의 최소값
         while ((pos=str.indexOf(' ')) != -1) {
+            //  .indexOf()  :  문자열에서 특정 문자열을 찾고, 찾은 문자열중 '첫번째'로 나타나는 위치의 index를 return (찾는 문자열이 없으면 -1 return.  대소문자를 구분함.)
             // .indexOf(' ')) != -1  : 띄어쓰기를 발견 못하면 -1을 반환하므로 while문 종료
             // ex) it is time to study 에서 띄어쓰기는 index값이 2,5,10,13일때이다
-
 
             String tmp = str.substring(0, pos);
             // .substring(indexStart, indexEnd) : 시작index에서 종료index까지 문자열의 부분문자열을 반환
@@ -46,6 +46,7 @@ public class WordInSentence_3 {
                 answer = tmp; // 단어를 교체
             }
             str = str.substring(pos+1);  // pos는 빈칸을 의미하므로 다음 단어를 찾으려면 +1 해줘야함
+                                         // .substring(indexStart) : indexStart 지점부터 문자열의 전체를 반환
         }
         if(str.length()>m) answer=str; // 마지막 단어의 크기가 m보다 크면 str로 바꾼다
         return answer;
@@ -54,7 +55,7 @@ public class WordInSentence_3 {
     public static void main(String[] args) {
         WordInSentence_3 ws = new WordInSentence_3();
         Scanner sc = new Scanner(System.in);
-        String str = sc.nextLine();    //  .nextLine()  :  문자 or 엔터치기 전까지 문자열 전체를 입력받아 String 타입으로 return
-        System.out.println(ws.resolution(str));
+        String str = sc.nextLine();    //  .nextLine() : 문자 or 엔터치기 전까지 문자열 전체를 입력받아 String 타입으로 return
+        System.out.println(ws.resolution2(str));
     }
 }

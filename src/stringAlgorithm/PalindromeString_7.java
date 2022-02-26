@@ -24,7 +24,16 @@ public class PalindromeString_7 {
 //                                                                      (0,1,2,3,4,5)
     public String solution(String str) {
 
-/*        String answer = "YES";
+        String answer = "NO";
+        String tmp = new StringBuilder(str).reverse().toString();   // 문자열 str을 역전시키고
+        if(str.equalsIgnoreCase(tmp))  answer="YES";    // 원래 문자열과 역전 문자열을 비교
+        return answer;                                  // .toString() : 객체가 가지고있는 값을 문자열로 return
+    }
+
+
+    public String solution2(String str) {
+
+        String answer = "YES";
         str=str.toUpperCase();  // .toUpperCase() : 전부 대문자가 됨  (이 문제는 대소문자 구분안하니까 전부 대문자로 바꿔버림)
         int len = str.length();
 
@@ -33,12 +42,6 @@ public class PalindromeString_7 {
         // .charAt(index번호) : String 문자열중에서 한글자만 char형 문자로 변환
         //  예를들어 str="gooG"; --> index(0,1,2,3) 에서 i=0이면 len=4이므로 len-i-1=3 즉  index 0번째 g와 index 3번째 G를 비교
         }
-        return answer;*/
-
-
-        String answer = "NO";
-        String tmp = new StringBuilder(str).reverse().toString();   // 문자열 str을 역전시키고
-        if(str.equalsIgnoreCase(tmp))  answer="YES";    // 원래 문자열과 역전 문자열을 비교
         return answer;
     }
 

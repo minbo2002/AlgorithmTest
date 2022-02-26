@@ -17,12 +17,20 @@ public class FindLetters_1 {
         str = str.toUpperCase();    // .toUpperCase() : 전부 대문자가 됨
         c = Character.toUpperCase(c);   // 문자c를 .toUpperCase(c) 사용해서 대문자로 변경
 
-//        for(int i=0; i<str.length(); i++) {   //  .charAt()  :  문자열을 index로 1개씩 접근
-//            if(str.charAt(i)==c) answer++;
-//        }
-
         for (char x : str.toCharArray()) {     // .toCharArray()  :  문자열을 한글자씩 쪼개서 char형 배열로 변경
             if(x==c) answer++;
+        }
+
+        return answer;
+    }
+
+    public int solution2(String str, char c) {
+        int answer = 0;
+        str = str.toUpperCase();    // .toUpperCase() : 전부 대문자가 됨
+        c = Character.toUpperCase(c);   // 문자c를 .toUpperCase(c) 사용해서 대문자로 변경
+
+        for(int i=0; i<str.length(); i++) {   //  .charAt()  :  문자열을 index로 1개씩 접근
+            if(str.charAt(i)==c) answer++;
         }
 
         return answer;

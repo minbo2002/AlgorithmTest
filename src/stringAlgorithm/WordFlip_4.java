@@ -20,12 +20,6 @@ public class WordFlip_4 {
 
         ArrayList<String> answer = new ArrayList<>();
 
-        /*for(String x : str) {
-            String tmp = new StringBuilder(x).reverse().toString();   // StringBuilder() : 문자열을 다루는 클래스
-                                                                      //                  (객체를 1개만 만들기 때문에 String에 비해 메모리 낭비가 적다.)
-            answer.add(tmp);                                          // .reverse() : 역전 메서드
-        }*/
-
         for(String x : str) {
             char[] s = x.toCharArray();  // toCharArray()  :   문자열을 한글자씩 쪼개서 char형 배열로 변경
                                          //                    (String은 변경못하지만 char형 배열은 가능)
@@ -44,6 +38,19 @@ public class WordFlip_4 {
         return answer;
     }
 
+    public ArrayList<String> solution2(int n, String[] str) {
+
+        ArrayList<String> answer = new ArrayList<>();
+
+        for(String x : str) {
+            String tmp = new StringBuilder(x).reverse().toString();   // StringBuilder() : 문자열을 다루는 클래스
+                                                                      //                  (객체를 1개만 만들기 때문에 String에 비해 메모리 낭비가 적다.)
+            answer.add(tmp);                                          // .reverse() : 역전 메서드
+        }                                                             // .toString() : 객체가 가지고있는 값을 문자열로 return
+
+        return answer;
+    }
+
     public static void main(String[] args) {
         WordFlip_4 wf = new WordFlip_4();
 
@@ -54,7 +61,7 @@ public class WordFlip_4 {
         for(int i=0; i<n; i++) {
             str[i] = sc.next();     // n개의 단어를 str 배열에 넣는다
         }
-        for(String x : wf.solution(n, str)) {   //
+        for(String x : wf.solution2(n, str)) {   //
             System.out.println(x);
         }
     }
