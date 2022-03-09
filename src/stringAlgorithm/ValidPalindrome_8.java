@@ -11,7 +11,7 @@ package stringAlgorithm;
  *        ex) found7, time: study; Yduts; emit, 7Dnuof
  *
  *  출력 : 첫 번째 줄에 회문 문자열인지의 결과를 YES 또는 NO로 출력합니다.
- *
+ *        ex) YES
  * */
 
 import java.util.Scanner;
@@ -22,6 +22,7 @@ public class ValidPalindrome_8 {
 
         String answer = "NO";
         str = str.toUpperCase().replaceAll("[^A-Z]", "");
+        System.out.println(str);
         // .toUpperCase() : 전부 대문자가 됨
         // .replaceAll("[^A-Z]", "")  :  .replaceAll(정규식 대문자 A~Z가 아니라면, 빈문자로 대체한다)
         String tmp = new StringBuilder(str).reverse().toString();   // .toString() : 객체가 가지고있는 값을 문자열로 return

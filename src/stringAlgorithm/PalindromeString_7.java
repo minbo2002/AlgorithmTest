@@ -7,9 +7,10 @@ package stringAlgorithm;
  *  단 회문을 검사할 때 대소문자를 구분하지 않습니다.
  *
  *  입력 : 첫 줄에 길이 100을 넘지않는 공백이 없는 문자열이 주어집니다.
+ *        ex) gooG
  *
  *  출력 : 첫 번째 줄에 회문 문자열인지의 결과를 YES 또는 NO로 출력합니다.
- *
+ *        ex) YES
  * */
 
 import java.util.Scanner;

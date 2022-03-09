@@ -7,7 +7,11 @@ package stringAlgorithm;
  *
  * 입력 : 첫 줄에 문자열이 입력된다. 문자열의 길이는 100을 넘지 않습니다.
  *          ( 문자열은 영어 알파벳으로만 구성되어 있습니다. )
+          ex) StuDY
+
  * 출력 : 첫 줄에 대문자는 소문자로, 소문자는 대문자로 변환된 문자열을 출력합니다.
+          ex) sTUdy
+
  *   */
 
 import java.util.Scanner;
@@ -16,7 +20,7 @@ public class CaseConversion_2 {
 
     public String solution(String str) {
         String answer = "";
-        for(char x : str.toCharArray()) {   //  .toCharArray() : 문자열을 배열로 변경
+        for(char x : str.toCharArray()) {   // .toCharArray() : 문자열을 한글자씩 쪼개서 char형 배열로 변경
             if(Character.isLowerCase(x)) answer+=Character.toUpperCase(x);
             //  .isLowerCase() : 소문자인지 판별 (맞으면 true 틀리면 false)
             //  .toUpperCase() : 대문자인지 판별 (맞으면 true 틀리면 false)

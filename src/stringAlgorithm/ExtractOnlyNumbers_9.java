@@ -40,9 +40,9 @@ public class ExtractOnlyNumbers_9 {
 
         String answer = "";
         for(char x : str.toCharArray()) {
-            if(Character.isDigit(x)) answer+=x;    // .isDigit()  :  char 문자형 값의 숫자여부를 판단하여 true 혹은 false를 return
+            if(Character.isDigit(x)) answer+=x;  // .isDigit() : char문자형 값의 숫자여부를 판단하여 true 혹은 false를 return
         }
-        return Integer.parseInt(answer);    //  .parseInt()  :  문자열을 정수로 바꾼다
+        return Integer.parseInt(answer);    //  .parseInt() : 문자열을 정수로 바꾼다
     }
 
 
