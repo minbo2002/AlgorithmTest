@@ -47,6 +47,7 @@ import java.util.Arrays;
 public class MergeSortedArray_88 {
 
     class Solution {
+
         public void merge(int[] nums1, int m, int[] nums2, int n) {
 
             int index = 0;
@@ -58,5 +59,40 @@ public class MergeSortedArray_88 {
 
             Arrays.sort(nums1);
         }
+
+
+        public void merge2(int[] nums1, int m, int[] nums2, int n) {
+
+            int [] x = new int[n+m];  // 1,2,3  2,5,6,1
+            int one = 0;
+            int two = 0;
+
+            for(int a=0; a<m+n; a++) {
+
+                if(one!=m && two!=n) {
+
+                    if(nums1[one]<=nums2[two]) {
+                        x[a]=nums1[one];
+                        one++;
+                    }else {
+                        x[a]=nums2[two];
+                        two++;
+                    }
+
+                }else if(one!=m) {
+                    x[a]=nums1[one];
+                    one++;
+                }else {
+                    x[a]=nums2[two];
+                    two++;
+                }
+            }
+
+            for(int i=0; i<m+n; i++) {
+                nums1[i]=x[i];
+            }
+        }
     }
+
+
 }

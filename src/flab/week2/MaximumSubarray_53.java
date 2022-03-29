@@ -55,5 +55,21 @@ public class MaximumSubarray_53 {
 
             return globalMax;
         }
+
+
+        public int maxSubArray2(int[] nums) {
+
+            int cursum = 0 ;
+
+            int maxsum = Integer.MIN_VALUE;
+
+            for(int i = 0 ; i < nums.length;i++){
+                cursum += nums[i];  //  cursum = cursum + nums[i];
+                if(cursum > maxsum) maxsum = cursum;
+                if(cursum<0) cursum = 0;
+            }
+
+            return maxsum;
+        }
     }
 }
