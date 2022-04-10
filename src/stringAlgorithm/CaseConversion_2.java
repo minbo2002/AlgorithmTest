@@ -23,7 +23,7 @@ public class CaseConversion_2 {
         for(char x : str.toCharArray()) {   // .toCharArray() : 문자열을 한글자씩 쪼개서 char형 배열로 변경
             if(Character.isLowerCase(x)) answer+=Character.toUpperCase(x);
             //  .isLowerCase() : 소문자인지 판별 (맞으면 true 틀리면 false)
-            //  .toUpperCase() : 대문자인지 판별 (맞으면 true 틀리면 false)
+            //  .isUpperCase() : 대문자인지 판별 (맞으면 true 틀리면 false)
             else answer+=Character.toLowerCase(x);
         }
         return answer;
