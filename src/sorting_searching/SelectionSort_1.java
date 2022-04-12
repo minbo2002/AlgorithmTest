@@ -36,7 +36,7 @@ public class SelectionSort_1 {
 
     public int[] solution(int n, int [] arr) {
 
-        for(int i=0; i<n; i++) {  // 마지막 자료인 n까지 갈 필요가 없음
+        for(int i=0; i<n; i++) {
 
             int index=i;
 

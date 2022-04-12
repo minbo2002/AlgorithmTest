@@ -1,4 +1,4 @@
-package flab.week3;
+package flab.week4;
 
 /*
 https://velog.io/@ddongh1122/LeetCode-33.-Search-in-Rotated-Sorted-Array
