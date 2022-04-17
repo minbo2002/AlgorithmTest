@@ -36,7 +36,7 @@ Both list1 and list2 are sorted in non-decreasing order.
  * }
  */
 
-public class MergeTwoSortedLists {
+public class MergeTwoSortedLists_21 {
 
     class Solution {
 
@@ -46,7 +46,8 @@ public class MergeTwoSortedLists {
 
             while(l1 != null && l2 != null) {
 
-                if (l1.val <= l2.val) {
+                if (l1.val <= l2.val) {   // 2개의 연결리스트를 비교해서 더 작은쪽을 먼저 추가하고
+                                          // 해당 리스트의 pointer를 다음으로 이동
                     handler.next = l1;
                     l1 = l1.next;
                 } else {
@@ -56,7 +57,7 @@ public class MergeTwoSortedLists {
                 handler = handler.next;
             }
 
-            if (l1 != null) {
+            if (l1 != null) {           // while문을 벗어나도 list가 남아있으면 뒤에다가 나머지 전부를 이어붙인다.
                 handler.next = l1;
             } else if (l2 != null) {
                 handler.next = l2;

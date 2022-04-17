@@ -2,92 +2,53 @@ package flab.week4;
 
 public class LongestPalindromicSubstring_5 {
 
-    class Solution {
+    class Solution {  // input 배열을기준으로 target 배열값의 index 위치를 찾는 문제
 
-        public String longestPalindrome(String s) {  // simple 알고리즘 방법
+        public int search(int[] nums, int target) {  // 퀵search (피벗기준)
 
-            if (s.isEmpty()) {
-                return null;
-            }
+            // [4,5,6,7,0,1,2]  left=0, right=6, target=0, output=4, mid=3
 
-            if (s.length() == 1) {
-                return s;
-            }
+            int left = 0;  // 왼쪽index
+            int right = nums.length - 1;  // right : 오른쪽 index
 
-            String longest = s.substring(0, 1);
-            // .substring(indexStart, indexEnd) : 시작index에서 종료index까지 문자열의 부분문자열을 반환.
-            // 단 indexEnd는 포함하지않음. ex) String str = 'apple' str.substring(1,3) --> "pp"
+            while (left <= right) {
+                int mid = (right + left) / 2;   // mid : 피벗 index
 
-            for (int i = 0; i < s.length(); i++) {
+                //찾으면 결과 리턴
+                if (nums[mid] == target) {
+                    return mid;
 
-                // get longest palindrome with center of i
-                String tmp = longSubstring(s, i, i);
-                if (tmp.length() > longest.length()) {
-                    longest = tmp;
+                    // 피벗 기준으로 왼쪽 부분이 완전히 정렬된 경우
+                } else if (nums[left] <= nums[mid]) {
+
+                    // 피벗기준으로 target이 오른쪽에 있음
+                    if (nums[mid] < target || nums[left] > target) {
+                        left = mid + 1;  // 왼쪽을 날림
+
+                        // 피벗기준으로 target이 왼쪽에 있음
+                    } else {
+                        right = mid - 1;  // 오른쪽을 날림
+                    }
+
+                    // 피벗 기준으로 오른쪽 부분이 완전히 정렬된 경우
+                } else {
+
+                    // 왼쪽 선택
+                    if (target < nums[mid] || target > nums[right]) {
+                        right = mid - 1;  // 오른쪽을 날림
+
+                        // 오른쪽 선택
+                    } else {
+                        left = mid + 1;   // 왼쪽을 날림
+                    }
+
                 }
 
-                // get longest palindrome with center of i, i+1
-                tmp = longSubstring(s, i, i + 1);
-                if (tmp.length() > longest.length()) {
-                    longest = tmp;
-                }
             }
 
-            return longest;
-        }
-
-
-        public String longSubstring(String s, int start, int end) {
-            while (start >= 0 && end <= s.length() - 1 && s.charAt(start) == s.charAt(end)) {
-                start--;
-                end++;
-
-            }
-            return s.substring(start + 1, end);
-            // .substring(indexStart, indexEnd) : 시작index에서 종료index까지 문자열의 부분문자열을 반환.
-            // 단 indexEnd는 포함하지않음. ex) String str = 'apple' str.substring(1,3) --> "pp"
+            return -1;
         }
     }
+
 }
 
-
-/*
-
-    class Solution {
-
-        public String longestPalindrome(String s) {
-
-            if (s == null || s.length() < 1) return "";  // 문자열이 null 이거나 길이가 1보다 작으면 ""
-
-            int start = 0, end = 0;
-
-            for (int i = 0; i < s.length(); i++) {
-
-                int len1 = expandAroundCenter(s, i, i);  // 길이가 홀수라고 가정
-                int len2 = expandAroundCenter(s, i, i + 1);  // 길이가 짝수라고 가정
-                int len = Math.max(len1, len2);
-
-                if (len > end - start) {
-                    start = i - (len - 1) / 2;
-                    end = i + len / 2;
-                }
-            }
-            return s.substring(start, end + 1);
-            // .substring(indexStart, indexEnd) : 시작index에서 종료index까지 문자열의 부분문자열을 반환.
-            // 단 indexEnd는 포함하지않음. ex) String str = 'apple' str.substring(1,3) --> "pp"
-        }
-
-        private int expandAroundCenter(String s, int left, int right) {
-
-            int L = left, R = right;
-
-            while (L >= 0 && R < s.length() && s.charAt(L) == s.charAt(R)) {
-                L--;
-                R++;
-            }
-
-            return R - L - 1;
-        }
-    }
-
- */
