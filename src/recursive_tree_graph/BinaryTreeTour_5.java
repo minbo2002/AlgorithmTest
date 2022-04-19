@@ -25,8 +25,8 @@ public class BinaryTreeTour_5 {
     static class Node {   //                            |---------|
                    //                                   |    1    |
         int data;  // 번호 1,2,3,4,.... 쓰는 용도         |---------|  Node 클래스 객체를 만들경우
-        Node lt, rt;  // 왼쪽노드, 오른쪽노드 주소          | lt | rt |  lt, rt는 객체주소를 저장하는 인스턴스변수
-                      //                                |-------- |
+        Node lt;   // 왼쪽노드 주소                       | lt | rt |  lt, rt는 객체주소를 저장하는 인스턴스변수
+        Node rt;   // 오른쪽노드 주소                     |-------- |
         public Node(int val) {
             data = val;
             lt = rt = null;

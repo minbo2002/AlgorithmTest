@@ -1,16 +1,17 @@
 package flab.week3;
 
 public class TreeNode {
-    int val;
 
-    public TreeNode left;
-    public TreeNode right;
+    public int val;  // 값을 저장할 변수
+
+    public TreeNode left;  // 왼쪽 연결 노드 정보를 저장할 변수
+    public TreeNode right; // 오른쪽 연결 노드 정보를 저장할 변수
 
     TreeNode() {
 
     }
 
-    TreeNode(int val) {
+    public TreeNode(int val) {
 
        this.val = val;
     }
