@@ -1,47 +1,32 @@
+import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.Scanner;
 
-public class DsgTest {
+//public class DsgTest {
 
     //  뒤집기
 
-    private String solution(String str) {
-        // Stringbuilder
-        String answer = "";
-//
-//        StringBuilder sb = new StringBuilder(str).reverse();
-//
-//        answer = sb.toString();
+class DsgTest {
+    public int[][] merge(int[][] intervals) {
 
-        //
-        char[] ch = str.toCharArray();
-        char tmp = ' ';
+        Arrays.sort(intervals, (a, b) -> Integer.compare(a[0], b[0]));
+        // .compare(a,b) : a>b이면 양수, a=b이면 0,  a<b이면 음수를 반환
 
-        for (int i = 0; i < ch.length / 2; i++) {
-            //swap
-//            tmp = ch[i];
-//            ch[i] = ch[ch.length - i - 1];
-//            ch[ch.length - i - 1] = tmp;
-            // 팰린드롬 판별법
-            if(ch[i] == ch[ch.length - i - 1]){
-                return "true";
+        LinkedList<int[]> merged = new LinkedList<>();
+
+        for(int[] tem : intervals) {
+
+            // 처음이거나, merged 마지막 인덱스에 들어있는 end값보다 다음번째 시작이 클경우
+            if(merged.isEmpty() || merged.getLast()[1]<tem[0]) {
+                merged.add(tem);
+
+                // merged 마지막 인덱스에 들어있는 end값이 시작값을 포함할때
+            }else if(merged.getLast()[1] >= tem[0]) {
+                merged.getLast()[1] = Math.max(merged.getLast()[1], tem[1]);
+                // .getLast() : 리스트의 마지막 요소 반환
             }
         }
 
-        answer = String.valueOf(ch);
-
-        return answer;
+        return merged.toArray(new int[merged.size()][]);
     }
-
-    public static void main(String[] args) {
-
-        DsgTest T = new DsgTest();
-
-        Scanner sc = new Scanner(System.in);
-
-        String str = sc.next();
-        System.out.println(T.solution(str));
-    }
-
-
-
 }
